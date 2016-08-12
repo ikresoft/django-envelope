@@ -18,8 +18,10 @@ from django.conf import settings
 
 from envelope import signals, settings as envelope_settings
 from envelope.forms import ContactForm
-
-from django.utils.importlib import import_module
+try:
+    from django.utils.importlib import import_module
+except:
+    from importlib import import_module
 
 logger = logging.getLogger('envelope.views')
 
